@@ -37,11 +37,9 @@ const Charts = () => {
 			)}
 
 			<h2 className={charts.title}>Top Artists</h2>
-			{loading ? (
-				<div className='flex justify-center items-center'>
-					<CircularProgress size={50} color='secondary' />
-				</div>
-			) : (
+			{loading ? 
+		''
+			 : (
 				<div className='flex flex-wrap gap-4  '>
 					{topCharts?.slice(0, 8).map((item, index) => (
 						<TopArtists key={index} item={item} />
