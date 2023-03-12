@@ -12,8 +12,10 @@ const Charts = () => {
 	const loading = useFetchData(state => state.loading)
 	const topCharts = topChartsArrey?.chart_items
 
-  useEffect(()=> {fetchTopChartsArrey()},[])
-  
+	useEffect(() => {
+		fetchTopChartsArrey()
+	}, [])
+
 	const charts = {
 		title: 'text-xl font-bold text-center p-4',
 	}
@@ -21,18 +23,17 @@ const Charts = () => {
 		<div className='w-[30%] hidden sm:block'>
 			<h1 className={charts.title}>Top Charts</h1>
 			{loading ? (
-				<div className='flex justify-center items-center'>
-					<CircularProgress size={50} color='secondary' />
-				</div>
+				''
 			) : (
-				<Link href='/details'><div className='flex justify-start items-start flex-col'>
-					{topCharts?.slice(0, 8).map((item, index) => (
-            <div key={index} onClick={() => setTrackId(item?.item?.id)}>
-						<TopCharts  id={index} item={item} />
-            </div>
-					))}
-				</div>
-        </Link>
+				<Link href='/details'>
+					<div className='flex justify-start items-start flex-col'>
+						{topCharts?.slice(0, 8).map((item, index) => (
+							<div key={index} onClick={() => setTrackId(item?.item?.id)}>
+								<TopCharts id={index} item={item} />
+							</div>
+						))}
+					</div>
+				</Link>
 			)}
 
 			<h2 className={charts.title}>Top Artists</h2>

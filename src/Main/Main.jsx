@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 import Banner from '../Banner'
 import Items from '../Items'
 import { useFetchData } from '../store'
-import CircularProgress from '@mui/material/CircularProgress';
 
 const Main = () => {
   const fetchSearch = useFetchData(state => state.fetchSearch)
@@ -34,7 +33,7 @@ const Main = () => {
 					<option>Soul</option>
 				</select>
 			</div>
-      {loading ? <div className='flex justify-center items-center'><CircularProgress size={100} color='secondary' /></div> : 	<div className='flex justify-around items-center flex-wrap  p-4'>
+      {loading ? '': 	<div className='flex justify-around items-center flex-wrap  p-4'>
 				 {searchTrack?.map((item, id) => (
           <div  onClick={() => setTrackId(item?.result?.id)} key={id}>
 					<Items   id={id}  item={item} />
