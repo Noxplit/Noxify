@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 import TopCharts from '../ChartsItem/TopCharts'
 import { useFetchData } from '../store'
 import TopArtists from '../TopArtists'
-import CircularProgress from '@mui/material/CircularProgress'
 import Link from 'next/link'
 
 const Charts = () => {

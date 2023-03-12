@@ -1,7 +1,4 @@
 import React from 'react'
-import PlayCircleIcon from '@mui/icons-material/PlayCircle'
-import Image from 'next/image'
-import { useFetchData } from '../store'
 
 const TopCharts = ({ item, id }) => {
 	const topCharts = item?.item
