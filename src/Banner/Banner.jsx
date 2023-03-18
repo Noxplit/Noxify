@@ -17,7 +17,7 @@ const Banner = () => {
 			<div className='absolute  flex flex-col gap-2'>
 				<h1 className='font-bold text-4xl uppercase'>Noxify</h1>
 				<h2 className='text-xl text-gray-400 uppercase'>The best music app on the world</h2>
-				<button className='text-xl bg-purple-400 py-2 mx-8 text-white rounded-lg hover:scale-105 transition-all'>Listen Music Now</button>
+				<button className='text-xl bg-purple-700 py-2 mx-8 text-white rounded-lg hover:scale-105 transition-all'>Listen Music Now</button>
 			</div>
 		</div>
 	)

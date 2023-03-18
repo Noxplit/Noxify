@@ -8,8 +8,9 @@
     @apply hover:text-purple-300 transition-all cursor-pointer
   }
   body {
-    @apply bg-[#101012] text-white
+    @apply bg-[#101012] text-white 
   }
+  
 }
 
 

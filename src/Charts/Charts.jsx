@@ -3,6 +3,7 @@ import TopCharts from '../ChartsItem/TopCharts'
 import { useFetchData } from '../store'
 import TopArtists from '../TopArtists'
 import Link from 'next/link'
+import { BarLoader } from 'react-spinners'
 
 const Charts = () => {
 	const topChartsArrey = useFetchData(state => state.topCharts)
@@ -22,7 +23,7 @@ const Charts = () => {
 		<div className='w-[30%] hidden sm:block'>
 			<h1 className={charts.title}>Top Charts</h1>
 			{loading ? (
-				''
+				<div className='flex justify-center items-center m-10'><BarLoader color='#a854f7'/></div>
 			) : (
 				<Link href='/details'>
 					<div className='flex justify-start items-start flex-col'>
@@ -39,11 +40,15 @@ const Charts = () => {
 			{loading ? 
 		''
 			 : (
+        <Link href='/details'>
 				<div className='flex flex-wrap gap-4  '>
 					{topCharts?.slice(0, 8).map((item, index) => (
-						<TopArtists key={index} item={item} />
+            <div  key={index} onClick={() => setTrackId(item?.item?.id)}>
+						<TopArtists  item={item} />
+            </div>
 					))}
 				</div>
+        </Link>
 			)}
 		</div>
 	)
