@@ -1,5 +1,4 @@
 import React from 'react'
-import GitHubIcon from '@mui/icons-material/GitHub';
 
 const Footer = () => {
   const footer = {
@@ -9,7 +8,7 @@ const Footer = () => {
   return (
     <div className={footer.box}>
         <p>Copyright © 2023 Noxplit</p>
-        <GitHubIcon className={footer.github}/>
+        <div className={footer.github}>Github</div>
     </div>
   )
 }

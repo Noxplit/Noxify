@@ -1,7 +1,4 @@
 import React, { useEffect } from 'react'
-import YoutubeSearchedForIcon from '@mui/icons-material/YoutubeSearchedFor'
-import MenuIcon from '@mui/icons-material/Menu'
-import GraphicEqIcon from '@mui/icons-material/GraphicEq'
 import { useBurgerMenu, useFetchData } from '../store'
 import Link from 'next/link'
 
@@ -26,15 +23,15 @@ const setSearchButton = () => {
 		<div className={style.header}>
 			<div className={style.search}>
 				
-<div className='block sm:hidden'><Link href='/'><GraphicEqIcon fontSize='medium'/></Link></div>
+<div className='block sm:hidden'><Link href='/'>Icon</Link></div>
 				<input
 					className='rounded-xl py-2 text-black bg-transparent text-center text-gray-300'
 					placeholder='Поиск...' value={search} onChange={(e) => setSearch(e.target.value) }
 				/>
-        <YoutubeSearchedForIcon className='hover:scale-105 transition-all cursor-pointer'  fontSize='medium' onClick={setSearchButton} />
+        <div className='hover:scale-105 transition-all cursor-pointer'  fontSize='medium' onClick={setSearchButton} >Search</div>
 			</div>
 			<div className='sm:hidden block transition-all cursor-pointer hover:scale-105'>
-				<MenuIcon onClick={isOpenBurger} />
+				<div onClick={isOpenBurger} >Burger Menu</div>
 			</div>
 		</div>
 	)
