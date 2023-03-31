@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react'
 import { useFetchData } from '../store'
-import YouTube from 'react-youtube'
 import { AiOutlineEye } from 'react-icons/ai'
 import { BarLoader } from 'react-spinners';
-
+import Iframe from 'react-iframe';
 const Details = () => {
 	const trackDetails = useFetchData(state => state.trackDetails)
 	const fetchTrackDetails = useFetchData(state => state.fetchTrackDetails)
@@ -67,7 +66,7 @@ const Details = () => {
 							Sorry... This song has no description
 						</div>
 					)}
-					<iframe  height={400} width='100%' src={details?.youtube_url?.replace('watch?v=', 'embed/')} />
+					<Iframe  height={400} width='100%' url={details?.youtube_url?.replace('watch?v=', 'embed/')} />
 
 					<div className='flex justify-center flex-wrap items-center gap-4'>
 						<a target='_blank' href={details?.share_url}>
