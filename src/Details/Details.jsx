@@ -8,8 +8,10 @@ const Details = () => {
 	const trackDetails = useFetchData(state => state.trackDetails)
 	const fetchTrackDetails = useFetchData(state => state.fetchTrackDetails)
 	const loading = useFetchData(state => state.loading)
+  const addToFavorite = useFetchData(state => state.addToFavorite)
+  const favorite = useFetchData(state => state.favorite)
 	const details = trackDetails?.song
-	console.log(details?.custom_song_art_image_url)
+  console.log(details?.youtube_url?.replace('watch?v=', 'embed/'));
 
 
 
@@ -24,10 +26,10 @@ const Details = () => {
 	}
 
 	return (
-		<div>
+		<div className='p-4'>
 			{loading ? <div className='flex justify-center items-center m-10'><BarLoader color='#a854f7'/></div>: 
 				<div className='flex flex-col justify-center items-center'>
-					<div className='flex justify-center items-center gap-10 '>
+					<div className='flex justify-center items-center flex-wrap gap-10 '>
 						{details?.custom_song_art_image_url?.length == null ? (
 							<img
 								src='notFound.png'
@@ -65,24 +67,26 @@ const Details = () => {
 							Sorry... This song has no description
 						</div>
 					)}
-					<div className='flex justify-center items-center gap-4'>
+					<iframe  height={400} width='100%' src={details?.youtube_url?.replace('watch?v=', 'embed/')} ></iframe>
+
+					<div className='flex justify-center flex-wrap items-center gap-4'>
 						<a href={details?.share_url}>
 							<button className='border-gray-500 border-2 px-10 py-2 rounded-md my-4 uppercase'>
 								song page
 							</button>
 						</a>
 						<a href={`https://open.spotify.com/track/${details?.spotify_uuid}`}>
-							<button className='bg-[#1bd760] text-white px-10 py-2 rounded-md my-4 uppercase'>
+							<button className='border-green-700 border-2 text-white px-10 py-2 rounded-md my-4 uppercase'>
 								listen on spotify
 							</button>
 						</a>
 						<a href={details?.apple_music_player_url}>
-							<button className='bg-purple-700 text-white px-10 py-2 rounded-md my-4 uppercase'>
+							<button className='border-purple-700 border-2 text-white px-10 py-2 rounded-md uppercase'>
 								demo
 							</button>
 						</a>
+
 					</div>
-					<YouTube videoId={details?.youtube_url?.replace('http://www.youtube.com/watch?v=', '')} />
 				</div>
 
 			}

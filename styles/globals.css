@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,500;0,700;1,400&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,12 +7,16 @@
 @layer base 
 {
   li {
-    @apply hover:text-purple-300 transition-all cursor-pointer
+    @apply hover:text-purple-300 transition-all cursor-pointer flex flex-col justify-center items-center
   }
   body {
-    @apply bg-[#101012] text-white 
+    @apply bg-gradient-to-r from-[#101012] to-[#101020] text-white 
   }
   
+}
+
+body {
+  font-family: 'Ubuntu', sans-serif;
 }
 
 

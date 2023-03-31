@@ -19,6 +19,8 @@ export const useFetchData = create((set, get) => ({
 	trackDetails: [],
 	songLyrics: [],
 	topCharts: [],
+  favorite:[],
+  addToFavorite: item => set({favorite: item}),
 	search: 'theweeknd',
 	page: 1,
 	setPage: value => set({ page: value }),
@@ -117,4 +119,27 @@ export const useFetchData = create((set, get) => ({
 			console.log(error)
 		}
 	},
+	fetchAlbums: async () => {
+    try {
+      const options = {
+        method: 'GET',
+				headers: {
+          'X-RapidAPI-Key': '406e13fe73mshba599c021ed7dc5p10dbe0jsnc04b14e8dc13',
+					'X-RapidAPI-Host': 'genius-song-lyrics1.p.rapidapi.com',
+				},
+			}
+      await get().setLoading()
+      
+			await fetch(
+				`https://genius-song-lyrics1.p.rapidapi.com/chart/albums/?time_period=all_time&per_page=10&page=1`,
+				options,
+			)
+				.then(response => response.json())
+				.then(response => set({ albums: response, error: null, loading: false }))
+				.catch(err => console.error(err))
+		} catch (error) {
+			console.log(error)
+		}
+	},
+
 }))

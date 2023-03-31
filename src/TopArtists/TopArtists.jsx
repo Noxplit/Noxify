@@ -2,7 +2,6 @@ import React from 'react'
 
 const TopArtists = ({item}) => {
 	const topCharts = item?.item
-  console.log(item);
 	return (
 		<div>
 			<img

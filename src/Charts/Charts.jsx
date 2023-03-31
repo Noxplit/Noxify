@@ -12,6 +12,7 @@ const Charts = () => {
 	const loading = useFetchData(state => state.loading)
 	const topCharts = topChartsArrey?.chart_items
 
+
 	useEffect(() => {
 		fetchTopChartsArrey()
 	}, [])

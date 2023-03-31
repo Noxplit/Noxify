@@ -1,4 +1,5 @@
 import React from 'react'
+import {AiFillGithub} from 'react-icons/ai'
 
 const Footer = () => {
   const footer = {
@@ -8,7 +9,7 @@ const Footer = () => {
   return (
     <div className={footer.box}>
         <p>Copyright © 2023 Noxplit</p>
-        <div className={footer.github}>Github</div>
+        <div className={footer.github}><AiFillGithub size={25}/></div>
     </div>
   )
 }

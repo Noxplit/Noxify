@@ -20,7 +20,6 @@ export default function Layout({ children }) {
 				</div>
 						<Charts />
 			</div>
-			<Footer />
 		</div>
     </div>
 	)
