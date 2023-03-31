@@ -67,7 +67,7 @@ const Details = () => {
 							Sorry... This song has no description
 						</div>
 					)}
-					<iframe  height={400} width='100%' src={details?.youtube_url?.replace('watch?v=', 'embed/')} ></iframe>
+					<iframe  height={400} width='100%' src={details?.youtube_url?.replace('watch?v=', 'embed/')} />
 
 					<div className='flex justify-center flex-wrap items-center gap-4'>
 						<a target='_blank' href={details?.share_url}>
