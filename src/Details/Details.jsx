@@ -70,17 +70,17 @@ const Details = () => {
 					<iframe  height={400} width='100%' src={details?.youtube_url?.replace('watch?v=', 'embed/')} ></iframe>
 
 					<div className='flex justify-center flex-wrap items-center gap-4'>
-						<a href={details?.share_url}>
+						<a target='_blank' href={details?.share_url}>
 							<button className='border-gray-500 border-2 px-10 py-2 rounded-md my-4 uppercase'>
 								song page
 							</button>
 						</a>
-						<a href={`https://open.spotify.com/track/${details?.spotify_uuid}`}>
+						<a target='_blank' href={`https://open.spotify.com/track/${details?.spotify_uuid}`}>
 							<button className='border-green-700 border-2 text-white px-10 py-2 rounded-md my-4 uppercase'>
 								listen on spotify
 							</button>
 						</a>
-						<a href={details?.apple_music_player_url}>
+						<a target='_blank' href={details?.apple_music_player_url}>
 							<button className='border-purple-700 border-2 text-white px-10 py-2 rounded-md uppercase'>
 								demo
 							</button>
