@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+
+
+body {
+  @apply text-black
+}
+
+.navigation_li {
+  @apply hover:bg-gray-100 cursor-pointer p-2
+}
+
+@layer base {
+  .animation_item {
+    @apply hover:bg-gray-100 p-2 cursor-pointer hover:scale-105 transition-all
+  }
+}
