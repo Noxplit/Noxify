@@ -1,10 +1,10 @@
 
-const Chart = ({children, title='Top Songs',rows}) => {
+const Chart = ({children, title='Top songs', rows}) => {
   return (
     <div>
     <div className='text-xl font-bold '>{title}</div>
     <div className='overflow-scroll'>
-      <div className={`grid grid-rows-${rows} grid-flow-col`}>
+      <div style={{display:'grid', gridTemplateRows:`repeat(${rows}, minmax(0, 1fr))`, gridAutoFlow:'column' }}>
    {children}
       </div>
     </div>

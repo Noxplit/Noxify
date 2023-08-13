@@ -30,7 +30,7 @@ const Home = () => {
 <Chart title='Top Artists' rows={'1'}>
 				<ChartArtists />
 			</Chart>
-			<Chart title='Top Referents' rows={'2'}>
+			<Chart title='Top Referents' rows={'1'}>
 				<ChartReferents />
 			</Chart>
 			<Chart title='Top Albums' rows={'4'}>
