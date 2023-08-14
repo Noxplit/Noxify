@@ -1,7 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { useGetChartSongsQuery } from '../../redux/songSlice/chartSongApi'
 import { useEffect } from 'react'
-import { Audio } from 'react-loader-spinner'
 import { getLoading } from '../../redux/songSlice/songSlice'
 import { Link } from 'react-router-dom'
 import Loading from '../Loading/Loading'

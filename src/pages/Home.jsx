@@ -8,13 +8,16 @@ import MySelect from '../components/Custom/MySelect'
 import { CHART_GENRE, TIME_PERIOD } from '../components/utils/constants'
 import { useDispatch, useSelector } from 'react-redux'
 import { getGenre, getPeriod } from '../components/../redux/songSlice/songSlice'
+import { useGetChartAlbumsQuery } from '../redux/songSlice/chartSongApi'
 
 const Home = () => {
   const dispatch = useDispatch()
   const {genre, period,loading} = useSelector(state => state.songSlice)
+  const {data} = useGetChartAlbumsQuery()
+  const chartAlbums = data?.chart_items
 
 	return (
-		<div className='  overflow-scroll border-l-2 border-l-gray-100 p-5'>
+		<div className=' border-l-2 border-l-gray-100 p-5'>
 			<h4 className='text-4xl font-bold mb-5'>Browse</h4>
 
 			<hr className='my-5' />
@@ -34,7 +37,7 @@ const Home = () => {
 				<ChartReferents />
 			</Chart>
 			<Chart title='Top Albums' rows={'4'}>
-				<ChartAlbums />
+				<ChartAlbums  chartAlbums={chartAlbums} />
 			</Chart>
       </>
 		}

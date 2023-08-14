@@ -21,4 +21,25 @@ body {
   .animation_item {
     @apply hover:bg-gray-100 p-2 cursor-pointer hover:scale-105 transition-all
   }
-}
+  .title_image_page {
+    @apply w-[200px] h-[200px] object-cover rounded-full border-2 border-red-400 
+  }
+  .my_flex {
+    @apply flex justify-center items-center gap-2
+  }
+  .artist_title_page {
+    @apply text-2xl font-bold mt-5 
+  }
+  .song_title_page {
+    @apply  text-gray-400 md:px-[300px] px-[50px] py-2  text-center 
+  }
+  .artist_image_page {
+    @apply  w-[50px] h-[50px] object-cover rounded-full border-2 border-red-400
+  }
+  .hover_div_artist {
+    @apply  flex justify-center items-center gap-2 cursor-pointer hover:scale-105 transition-all hover:text-red-400
+  }
+  .description_preview {
+    @apply md:px-[300px] px-[50px] py-5 text-xs
+  }
+ }
