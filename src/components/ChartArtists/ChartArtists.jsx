@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useGetChartArtistsQuery } from '../../redux/songSlice/chartSongApi'
 
 const ChartArtists = () => {
@@ -6,10 +7,10 @@ const ChartArtists = () => {
 
   return (
     <>
-    {chartArtists?.map(items =>  <div key={items?.item?.id} className='w-[150px] animation_item'>
-      <img className='w-[150px] h-[150px] object-cover' src={items?.item?.header_image_url} alt="" />
-      <div>{items?.item?.name}</div>
-    </div> )}
+    {chartArtists?.map(({item}) =>  <Link key={item?.id} to={`/artist/${item?.id}`}><div  className='w-[150px] animation_item'>
+      <img className='w-[150px] h-[150px] object-cover' src={item?.header_image_url} alt="" />
+      <div>{item?.name}</div>
+    </div></Link> )}
    
     </>
   )
