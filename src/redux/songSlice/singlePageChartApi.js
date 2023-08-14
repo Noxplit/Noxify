@@ -17,6 +17,9 @@ export const singlePageChartApi = createApi({
     getAlbumsPage: builder.query({
 			query: (id) => `/album/details/?id=${id}`,
 		}),
+    getArtistPage: builder.query({
+			query: (id) => `/artist/details/?id=${id}`,
+		}),
     getAlbumsAppearance: builder.query({
 			query: (id) => `/album/appearances/?id=${id}`,
 		}),
@@ -25,4 +28,4 @@ export const singlePageChartApi = createApi({
 })
 
 
-export const {useGetSongPageQuery, useGetAlbumsPageQuery, useGetAlbumsAppearanceQuery } = singlePageChartApi
+export const {useGetSongPageQuery, useGetAlbumsPageQuery, useGetAlbumsAppearanceQuery, useGetArtistPageQuery } = singlePageChartApi

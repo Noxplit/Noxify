@@ -37,7 +37,7 @@ body {
     @apply  w-[50px] h-[50px] object-cover rounded-full border-2 border-red-400
   }
   .hover_div_artist {
-    @apply  flex justify-center items-center gap-2 cursor-pointer hover:scale-105 transition-all hover:text-red-400
+    @apply  flex justify-start items-center gap-2 cursor-pointer hover:scale-105 transition-all hover:text-red-400
   }
   .description_preview {
     @apply md:px-[300px] px-[50px] py-5 text-xs
