@@ -4,9 +4,9 @@ const AlbumsPage = ({ chartAlbums }) => {
 	return (
 		<>
 			{chartAlbums?.map(chart => (
-				<Link key={chart?.id} to={`/album/${chart?.id}`}><div key={chart?.id} className='w-[200px] h-[340px] animation_item'>
+				<Link key={chart?.id} to={`/album/${chart?.id}`}><div key={chart?.id} className='w-[200px] h-[285px] animation_item'>
 					<img
-						className='w-[200px] h-[200px] object-cover'
+						className='albums_image'
 						src={chart?.cover_art_thumbnail_url}
 						alt=''
 					/>

@@ -19,7 +19,10 @@ body {
 
 @layer base {
   .animation_item {
-    @apply hover:bg-gray-100 p-2 cursor-pointer hover:scale-105 transition-all
+    @apply hover:bg-gray-100 p-2   cursor-pointer hover:scale-105 transition-all
+  }
+  .albums_image {
+    @apply w-[180px] h-[180px] rounded-md object-cover
   }
   .title_image_page {
     @apply w-[200px] h-[200px] object-cover rounded-full border-2 border-red-400 

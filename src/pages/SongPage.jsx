@@ -4,15 +4,18 @@ import YouTube from 'react-youtube'
 import Loading from '../components/Loading/Loading'
 import AlbumsPage from '../components/AlbumsPage/AlbumsPage'
 import { NOT_FOUND } from '../components/utils/constants'
+import { useWindowSize } from '@uidotdev/usehooks'
 
 const SongPage = () => {
+  const {width} = useWindowSize()
 	const { id } = useParams()
 	const { data, isLoading } = useGetSongPageQuery(id)
 	const song = data?.song
   const artist = song?.writer_artists[0]?.id
 	const youtube = song?.youtube_url?.slice(31)
 
-	console.log(song)
+const mobileWidth = width <= 900
+console.log(width);
 
 	if (isLoading) {
 		return <Loading />
@@ -26,21 +29,19 @@ const SongPage = () => {
 				alt='image'
 			/>
 			<Link to={`/artist/${artist}`}><div className='hover_div_artist'>
-				<img
-					src={song?.album?.artist?.header_image_url}
-					alt='artist'
-					className='artist_image_page'
-				/>
+		
 				<div className='artist_title_page'>{song?.artist_names}</div>
 			</div></Link>
 			<div className='song_title_page'>{song?.title}</div>
 			<div className='text-md text-gray-400 md:px-[300px] px-[50px]  text-xs '>
-				relese: {song?.release_date}
+				Relese: {song?.release_date}
 			</div>
 			<div className='description_preview'>{song?.description_preview}</div>
-			<YouTube videoId={youtube} style={{}} opts={{ width: '360px', height: '360px' }} />
+      <div>
+			<YouTube videoId={youtube} opts={mobileWidth ? {width:'340px', height:'340px'} : {width:'900px', height:'500px'} } />
+      </div>
 			<div className='text-2xl font-bold'>Albums</div>
-			<div className='flex justify-around items-center flex-wrap my-5 gap-2'>
+			<div className='flex justify-center items-center overflow-scroll lg:w-full md:w-[80%] w-[360px]'>
 				<AlbumsPage chartAlbums={song?.albums} />
 			</div>
 		</div>
