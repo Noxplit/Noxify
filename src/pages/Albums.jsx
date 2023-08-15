@@ -24,12 +24,12 @@ if(isLoading) {
     </div></Link>
     <div className='song_title_page'>{album?.name}</div>
     <div className='song_title_page'>{album?.release_date_for_display}</div>
-    <div className='my_flex flex-wrap'>
+    <div className='flex justify-center items-center overflow-scroll lg:w-full md:w-[80%] w-[360px] gap-2'>
     {coverArts?.map(cover => <img key={coverArts?.id} alt='covers' className='w-[100px] h-[100px] rounded-md cursor-pointer hover:scale-105 transition-all' src={cover?.thumbnail_image_url}/>)}
     </div>
     <div className='description_preview'>{album?.description_preview}</div>
-    <div className='justify-start gap-2'>
     <div className='artist_title_page'>Tracklist</div>
+    <div className='flex lg:flex-col justify-start lg:items-center items-start overflow-scroll lg:w-full md:w-[80%] w-[360px] gap-5'>
     {appearance?.map(({song}, id) => <Link  key={song?.id} to={`/song/${song?.id}`}><div className='hover_div_artist mb-1'>{`${id+1}) ${song?.title}`}</div> </Link>)}
     </div>
    </div>
