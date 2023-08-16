@@ -8,7 +8,7 @@ const SearchItems = ({search}) => {
 					<img
 						className='albums_image'
 						src={result?.header_image_thumbnail_url}
-						alt=''
+						alt={result?.name}
 					/>
 					<div className="text-sm">{result?.full_title}</div>
 					<div className='text-xs text-gray-400 '>{result?.name}</div>

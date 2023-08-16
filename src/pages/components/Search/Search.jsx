@@ -12,6 +12,8 @@ const Search = () => {
   const dispatch = useDispatch()
   const {input} = useSelector(state => state.songSlice)
   const [page, setPage] = useState(1)
+  const plus = () => setPage(page + 1)
+  const minus = () => setPage(page - 1)
   const params = {
     input,
     page
@@ -44,8 +46,8 @@ const Search = () => {
 					/>
           <div className="my_flex">
           <button className="my_button" type="submit">Search</button>
-          <div onClick={() => setPage(page - 1)} className="my_button flex justify-center items-center"><AiOutlineArrowLeft/></div>
-          <div onClick={() => setPage(page + 1)} className="my_button flex justify-center items-center"><AiOutlineArrowRight/></div>
+          <div onClick={minus} className="my_button flex justify-center items-center"><AiOutlineArrowLeft/></div>
+          <div onClick={plus} className="my_button flex justify-center items-center"><AiOutlineArrowRight/></div>
           </div>
 				</form>
 			</div>

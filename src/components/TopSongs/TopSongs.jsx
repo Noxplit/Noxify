@@ -3,6 +3,7 @@ import { useGetChartSongsQuery } from '../../redux/songSlice/chartSongApi'
 import { useEffect } from 'react'
 import { getLoading } from '../../redux/songSlice/songSlice'
 import { Link } from 'react-router-dom'
+import {AiOutlineStar} from 'react-icons/ai'
 import Loading from '../Loading/Loading'
 
 const TopSongs = () => {
@@ -32,7 +33,6 @@ const TopSongs = () => {
 						<div className='text-xs'>{item?.item?.artist_names}</div>
 						<p className='text-xs text-gray-400'>{item?.item?.title}</p>
 					</div>
-					<div className='text-xs '>2:30</div>
 				</div>
         </Link>
 			))}
