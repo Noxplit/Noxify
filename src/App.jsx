@@ -5,6 +5,7 @@ import Header from "./components/Header/Header"
 import Home from "./pages/Home"
 import Albums from "./pages/Albums"
 import Artists from "./pages/Artists"
+import Search from "./pages/components/Search/Search"
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
     <Route path="/song/:id" element={<SongPage/>}/>
     <Route path="/album/:id" element={<Albums/>}/>
     <Route path="/artist/:id" element={<Artists/>}/>
+    <Route path="/search" element={<Search/>}/>
     <Route path="/" element={<Home/>}/>
   </Routes>
   </div>

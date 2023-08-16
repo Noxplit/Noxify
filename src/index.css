@@ -45,4 +45,7 @@ body {
   .description_preview {
     @apply md:px-[300px] px-[50px] py-5 text-xs
   }
+  .my_button {
+    @apply border-2 border-gray-100 w-[100px] p-2 rounded-md cursor-pointer hover:bg-gray-100 
+  }
  }

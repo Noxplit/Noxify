@@ -24,7 +24,7 @@ const TopSongs = () => {
 				
 					className='flex justify-start items-center gap-2 hover:bg-gray-100 w-[300px] cursor-pointer px-2 '>
 					<img
-						className='w-[50px] h-[50px] object-cover'
+						className='w-[50px] h-[50px] rounded-sm object-cover'
 						src={item?.item?.header_image_thumbnail_url}
 						alt='travis'
 					/>

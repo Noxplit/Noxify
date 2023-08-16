@@ -41,7 +41,7 @@ console.log(width);
 			<YouTube videoId={youtube} opts={mobileWidth ? {width:'340px', height:'340px'} : {width:'900px', height:'500px'} } />
       </div>
 			<div className='text-2xl font-bold'>Albums</div>
-			<div className='flex justify-center items-center overflow-scroll lg:w-full md:w-[80%] w-[360px]'>
+			<div className='flex lg:justify-center md:justify-center justify-start items-center overflow-scroll lg:w-full md:w-[80%] w-[360px]'>
 				<AlbumsPage chartAlbums={song?.albums} />
 			</div>
 		</div>
