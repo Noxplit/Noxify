@@ -24,7 +24,7 @@ const PhotoSwiper = ({link, setSwiper}) => {
 			<AiOutlineClose
       onClick={() => setSwiper(false)}
       size={'40'}
-     style={{ position: 'fixed', top: '25%', zIndex: 60, right: '5%', color: 'white'}}
+     style={{ position: 'fixed', top: 0, zIndex: 60, right:0, color: 'white', cursor:'pointer'}}
     />
 			<Swiper
 				modules={[Navigation, Pagination, Scrollbar, A11y]}
@@ -32,16 +32,19 @@ const PhotoSwiper = ({link, setSwiper}) => {
 				navigation={true}
         className='text-white'
 				effect='coverflow'
+        zoom={true}
 				grabCursor={true}>
-				{link?.map(cover => (
+				{link?.map((cover,id) => (
 					<SwiperSlide
 						key={cover?.id}
+            virtualIndex={id+1}
 						style={{
 							display: 'flex',
 							justifyContent: 'center',
 							alignItems: 'center',
-							height: '500px',
+							height: '700px',
 						}}>
+              <div className='fixed top-[95%]'>{id+1}/{link.length}</div>
 						<img
 							alt='covers'
 							className='w-[80%] '

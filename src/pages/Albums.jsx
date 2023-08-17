@@ -14,7 +14,7 @@ const Albums = () => {
 	const album = data?.album
 	const coverArts = data?.album?.cover_arts
 	const appearance = albumAppearance?.album_appearances
-	const [swiper, setSwiper] = useState(true)
+	const [swiper, setSwiper] = useState(false)
 	if (isLoading) {
 		return <Loading />
 	}
