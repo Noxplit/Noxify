@@ -7,15 +7,32 @@ import Artists from './pages/Artists'
 import Search from './pages/components/Search/Search'
 import Login from './pages/Login/Login'
 import CreateAccount from './pages/CreateAccount/CreateAccount'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import Profile from './pages/components/Profile/Profile'
+import { setCurrentUser, setIsAuth } from './redux/songSlice/authSlice'
+import { useEffect } from 'react'
 
 function App() {
-	const {isAuth} = useSelector(state => state.authSlice)
-  const {theme} = useSelector(state => state.songSlice)
+	const { isAuth} = useSelector(state => state.authSlice)
+	const { theme } = useSelector(state => state.songSlice)
+	const dispatch = useDispatch()
+
+	useEffect(() => {
+		if (localStorage.getItem('auth')) {
+			dispatch(setIsAuth(true))
+			const email = localStorage.getItem('email')
+			const id = localStorage.getItem('id')
+			const name = localStorage.getItem('name')
+			const avatar = localStorage.getItem('avatar')
+			const password = localStorage.getItem('password')
+			const newCurrentUser = { email, name, avatar, password, id }
+			console.log(newCurrentUser)
+			dispatch(setCurrentUser(newCurrentUser))
+		}
+	}, [])
 
 	return (
-		<div className={theme ? '' : 'dark' }>
+		<div className={!theme ? '' : 'dark'}>
 			{isAuth ? (
 				<div className='dark:text-white dark:bg-gradient-to-tr from-slate-800 via-gray-800 to-neutral-600 dark:h-100%'>
 					<Header />
@@ -31,8 +48,8 @@ function App() {
 				</div>
 			) : (
 				<Routes>
-					<Route path='/login' element={<Login/>} />
-					<Route path='/create_account' element={<CreateAccount/>} />
+					<Route path='/login' element={<Login />} />
+					<Route path='/create_account' element={<CreateAccount />} />
 					<Route path='*' element={<Login />} />
 				</Routes>
 			)}

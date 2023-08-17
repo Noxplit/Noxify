@@ -10,6 +10,8 @@ const Header = () => {
   const { currentUser } = useSelector(state => state.authSlice)
   const {theme} = useSelector(state => state.songSlice)
   const dispatch = useDispatch()
+
+
 	return (
 		<div className='h-[60px] p-5 flex justify-between items-center border-b-2 border-gray-100'>
 			<Link to='/'>

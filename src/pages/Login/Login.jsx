@@ -8,17 +8,25 @@ const Login = () => {
 	const { currentUser, errorLogin } = useSelector(state => state.authSlice)
 	const dispatch = useDispatch()
 
+
 	const handleSubmit = e => {
 		e.preventDefault()
 		dispatch(loginUser(values))
 		if (currentUser) {
 			dispatch(setIsAuth(true))
 		}
+    localStorage.setItem('auth', 'true')
 		setValues({ email: '', password: '' })
 	}
 
 	if (currentUser) {
 		dispatch(setIsAuth(true))
+    localStorage.setItem('email', currentUser.email )
+    localStorage.setItem('id', currentUser.id )
+    localStorage.setItem('name', currentUser.name )
+    localStorage.setItem('avatar', currentUser.avatar )
+    localStorage.setItem('password', currentUser.password )
+
 	}
 
 	return (

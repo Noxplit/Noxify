@@ -15,6 +15,7 @@ const Profile = () => {
   const handleExit = () => {
 dispatch(setIsAuth(false))
 dispatch(setCurrentUser(null))
+localStorage.removeItem('auth')
   }
 
   return (
