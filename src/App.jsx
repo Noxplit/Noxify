@@ -13,7 +13,7 @@ import { setCurrentUser, setIsAuth } from './redux/songSlice/authSlice'
 import { useEffect } from 'react'
 
 function App() {
-	const { isAuth} = useSelector(state => state.authSlice)
+	const { isAuth } = useSelector(state => state.authSlice)
 	const { theme } = useSelector(state => state.songSlice)
 	const dispatch = useDispatch()
 
@@ -26,7 +26,6 @@ function App() {
 			const avatar = localStorage.getItem('avatar')
 			const password = localStorage.getItem('password')
 			const newCurrentUser = { email, name, avatar, password, id }
-			console.log(newCurrentUser)
 			dispatch(setCurrentUser(newCurrentUser))
 		}
 	}, [])

@@ -6,10 +6,12 @@ import { BsMoon } from 'react-icons/bs'
 import { useDispatch, useSelector } from 'react-redux'
 import { setTheme } from '../../redux/songSlice/songSlice'
 
+
 const Header = () => {
   const { currentUser } = useSelector(state => state.authSlice)
   const {theme} = useSelector(state => state.songSlice)
   const dispatch = useDispatch()
+
 
 
 	return (
