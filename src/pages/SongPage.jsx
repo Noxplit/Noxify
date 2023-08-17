@@ -15,14 +15,13 @@ const SongPage = () => {
 	const youtube = song?.youtube_url?.slice(31)
 
 const mobileWidth = width <= 900
-console.log(width);
 
 	if (isLoading) {
 		return <Loading />
 	}
 
 	return (
-		<div className='my_flex flex-col my-2'>
+		<div className='my_flex flex-col mt-5'>
 			<img
 				className='title_image_page'
 				src={song?.custom_header_image_url ? song?.custom_header_image_url : NOT_FOUND}

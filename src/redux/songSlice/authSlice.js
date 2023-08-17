@@ -10,7 +10,6 @@ export const createUser = createAsyncThunk(
       const res = await axios.post(`${BASE_URL}/users`, payload);
       return res.data;
     } catch (err) {
-      console.log(err);
       return thunkAPI.rejectWithValue(err);
     }
   }
@@ -29,7 +28,19 @@ export const loginUser = createAsyncThunk(
 
       return login.data;
     } catch (err) {
-      console.log(err);
+      return thunkAPI.rejectWithValue(err);
+    }
+  }
+);
+export const updateUser = createAsyncThunk(
+  "users/updateUser",
+  async (payload, thunkAPI) => {
+    try {
+      const res = await axios.put(`${BASE_URL}/users/${payload.id}`, payload);
+  
+
+      return res.data;
+    } catch (err) {
       return thunkAPI.rejectWithValue(err);
     }
   }
@@ -38,6 +49,7 @@ export const loginUser = createAsyncThunk(
 const currentUser = (state, { payload }) => {
   state.currentUser = payload;
 };
+
 const isError = (state, { payload }) => {
   state.error = payload;
 };
@@ -59,16 +71,20 @@ export const authSlice = createSlice({
   },
   setSignUp:(state,{payload}) => {
     state.signUp = payload
+  },
+  setCurrentUser:(state,{payload}) => {
+    state.currentUser = payload
   }
 	},
   extraReducers:(builder) => {
     builder.addCase(createUser.fulfilled);
     builder.addCase(loginUser.fulfilled, currentUser);
+    builder.addCase(updateUser.fulfilled, currentUser);
     builder.addCase(createUser.rejected, isError);
     builder.addCase(loginUser.rejected, errorLogin);
   }
 })
 
-export const {setIsAuth, setSignUp} = authSlice.actions
+export const {setIsAuth, setSignUp, setCurrentUser} = authSlice.actions
 
 export default authSlice.reducer

@@ -7,7 +7,8 @@ export const songSlice = createSlice({
 		genre: 'all',
     pagination:1,
     loading:true,
-    input:'eminem'
+    input:'eminem',
+    theme:false
 	},
 	reducers: {
 		getPeriod: (state, { payload }) => {
@@ -25,9 +26,12 @@ export const songSlice = createSlice({
 		getInput: (state, { payload }) => {
 			state.input = payload
 		},
+    setTheme: (state, { payload }) => {
+			state.theme = payload
+		},
 	},
 })
 
-export const { getGenre, getPeriod,getPagination,getLoading, getInput } = songSlice.actions
+export const { getGenre, getPeriod,getPagination,getLoading, getInput,setTheme } = songSlice.actions
 
 export default songSlice.reducer

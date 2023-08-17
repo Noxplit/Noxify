@@ -10,14 +10,13 @@ const Artists = () => {
   const {id} = useParams()
   const {data,isLoading} = useGetArtistPageQuery(id)
   const artist = data?.artist
-  console.log(artist);
 
   if(isLoading) {
     return <Loading/>
   }
 	return (
-    <div className='my_flex my-5 flex-col'>
-    <img src={artist?.header_image_url ? artist?.header_image_url : NOT_FOUND } className='title_image_page' alt="" />
+    <div className='flex items-center flex-col dark:h-screen'>
+    <img src={artist?.header_image_url ? artist?.header_image_url : NOT_FOUND } className='title_image_page my-5' alt="" />
     <div className="my_flex">
 <Link to={`https://www.instagram.com/${artist?.instagram_name}`}><AiFillInstagram className="hover_div_artist" size={'47px'}/></Link>
 <Link to={`https://www.facebook.com/${artist?.facebook_name}`}><BsFacebook className="hover_div_artist" size={'40px'}/></Link>

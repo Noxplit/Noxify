@@ -28,7 +28,6 @@ const Search = () => {
   }
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log(input);
     dispatch(getInput(value))
   }
 
@@ -42,7 +41,7 @@ const Search = () => {
           onChange={e => handleChange(e)}
 						type='text'
 						placeholder='search song...'
-						className='border-gray-100 lg:w-[900px] md:w-[600px] sm:w-[450px] w-[360px]  border-2 text-center text-xs rounded-l-md py-2'
+						className='border-gray-100 lg:w-[900px] md:w-[600px] sm:w-[450px] w-[360px]  border-2 text-center text-xs rounded-l-md py-2 dark:text-black'
 					/>
           <div className="my_flex">
           <button className="my_button" type="submit">Search</button>

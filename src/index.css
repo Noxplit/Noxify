@@ -10,7 +10,7 @@ body {
 
 
 body {
-  @apply text-black
+  @apply  text-black
 }
 
 .navigation_li {
@@ -46,9 +46,9 @@ body {
     @apply md:px-[300px] px-[50px] py-5 text-xs
   }
   .my_button {
-    @apply border-2 border-gray-100 w-[100px] p-2 rounded-md cursor-pointer hover:bg-gray-100 
+    @apply dark:hover:text-black border-2 border-gray-100 w-[100px] p-2 rounded-md cursor-pointer w-full hover:bg-gray-100 
   }
   .input_login {
-    @apply border-2 border-gray-300 p-2 rounded-md w-full
+    @apply border-2 border-gray-300 p-2 rounded-md w-full dark:text-black
   }
  }
