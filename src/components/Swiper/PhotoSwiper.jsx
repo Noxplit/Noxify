@@ -44,7 +44,7 @@ const PhotoSwiper = ({link, setSwiper}) => {
 							alignItems: 'center',
 							height: '700px',
 						}}>
-              <div className='fixed top-[95%]'>{id+1}/{link.length}</div>
+              <div className='fixed top-[90%]'>{id+1}/{link.length}</div>
 						<img
 							alt='covers'
 							className='w-[80%] '

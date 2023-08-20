@@ -23,7 +23,7 @@ const TopSongs = () => {
 			{chartSongs?.map((item, id) => (
 				<Link 	key={id} to={`/song/${item?.item?.id}`}><div
 				
-					className='flex justify-start items-center gap-2 hover:bg-gray-100 w-[300px] cursor-pointer px-2 '>
+					className='top_songs_item'>
 					<img
 						className='w-[50px] h-[50px] rounded-sm object-cover'
 						src={item?.item?.header_image_thumbnail_url}
