@@ -1,32 +1,36 @@
-import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { loginUser, setIsAuth } from '../../redux/songSlice/authSlice'
+import { useForm } from 'react-hook-form'
+import { AiOutlineWarning } from 'react-icons/ai'
 
 const Login = () => {
-	const [values, setValues] = useState({ email: '', password: '' })
 	const { currentUser, errorLogin } = useSelector(state => state.authSlice)
 	const dispatch = useDispatch()
 
+	const {
+		register,
+		handleSubmit,
+		reset,
+		formState: { errors, isValid },
+	} = useForm({ mode: 'onBlur' })
 
-	const handleSubmit = e => {
-		e.preventDefault()
-		dispatch(loginUser(values))
+	const onSubmit = data => {
+		dispatch(loginUser(data))
 		if (currentUser) {
 			dispatch(setIsAuth(true))
 		}
-    localStorage.setItem('auth', 'true')
-		setValues({ email: '', password: '' })
+		localStorage.setItem('auth', 'true')
+		reset()
 	}
 
 	if (currentUser) {
 		dispatch(setIsAuth(true))
-    localStorage.setItem('email', currentUser.email )
-    localStorage.setItem('id', currentUser.id )
-    localStorage.setItem('name', currentUser.name )
-    localStorage.setItem('avatar', currentUser.avatar )
-    localStorage.setItem('password', currentUser.password )
-
+		localStorage.setItem('email', currentUser.email)
+		localStorage.setItem('id', currentUser.id)
+		localStorage.setItem('name', currentUser.name)
+		localStorage.setItem('avatar', currentUser.avatar)
+		localStorage.setItem('password', currentUser.password)
 	}
 
 	return (
@@ -48,23 +52,42 @@ const Login = () => {
 				{errorLogin?.message && <span className='text-red-400'>Invalid user data entered</span>}
 				<form
 					action='submit'
-					onSubmit={handleSubmit}
+					onSubmit={handleSubmit(onSubmit)}
 					className='flex justify-center items-center flex-col gap-5 w-full'>
 					<input
 						placeholder='Enter email'
-						name='login'
-						value={values.email}
-						onChange={e => setValues({ ...values, email: e.target.value })}
+						name='email'
+						{...register('email', {
+							required: 'Enter correct email',
+							minLength: { message: 'Min length 5 symbols', value: 5 },
+						})}
 						className='input_login'
 					/>
+					{errors?.email && (
+						<span className='text-red-400 my_flex'>
+							<AiOutlineWarning />
+							{errors?.email?.message}
+						</span>
+					)}
 					<input
 						placeholder='Enter password'
 						name='password'
-						value={values.password}
-						onChange={e => setValues({ ...values, password: e.target.value })}
+						{...register('password', {
+							required: 'Enter correct password',
+							minLength: { message: 'Min length 5 symbols', value: 5 },
+						})}
 						className='input_login'
 					/>
-					<button type='submit' className='border-2 border-gray-300 p-2 rounded-md bg-white w-full'>
+					{errors?.password && (
+						<span className='text-red-400 my_flex'>
+							<AiOutlineWarning />
+							{errors?.password?.message}
+						</span>
+					)}
+					<button
+						disabled={!isValid}
+						type='submit'
+						className={isValid ? 'button_enabled' : 'button_disabled'}>
 						Login
 					</button>
 				</form>

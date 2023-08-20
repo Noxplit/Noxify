@@ -3,7 +3,6 @@ import { useGetChartSongsQuery } from '../../redux/songSlice/chartSongApi'
 import { useEffect } from 'react'
 import { getLoading } from '../../redux/songSlice/songSlice'
 import { Link } from 'react-router-dom'
-import {AiOutlineStar} from 'react-icons/ai'
 import Loading from '../Loading/Loading'
 
 const TopSongs = () => {

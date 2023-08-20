@@ -56,6 +56,9 @@ const isError = (state, { payload }) => {
 const errorLogin = (state, { payload }) => {
   state.errorLogin = payload;
 };
+const created = (state) => {
+  state.isCreated = true;
+};
 
 export const authSlice = createSlice({
 	name: 'auth',
@@ -63,6 +66,7 @@ export const authSlice = createSlice({
 	isAuth:false,
   error:null,
   currentUser:null,
+  isCreated: false,
   errorLogin:null
 	},
 	reducers: {
@@ -77,7 +81,7 @@ export const authSlice = createSlice({
   }
 	},
   extraReducers:(builder) => {
-    builder.addCase(createUser.fulfilled);
+    builder.addCase(createUser.fulfilled, created);
     builder.addCase(loginUser.fulfilled, currentUser);
     builder.addCase(updateUser.fulfilled, currentUser);
     builder.addCase(createUser.rejected, isError);

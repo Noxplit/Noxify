@@ -54,4 +54,10 @@ body {
   .input_login {
     @apply border-2 border-gray-300 p-2 rounded-md w-full dark:text-black
   }
+  .button_enabled {
+    @apply border-2 border-gray-300 p-2 rounded-md bg-white w-full
+  }
+  .button_disabled {
+    @apply text-white p-2 rounded-md bg-black/50 w-full
+  }
  }
