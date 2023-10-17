@@ -15,7 +15,7 @@ const Artists = () => {
     return <Loading/>
   }
 	return (
-    <div className='flex items-center flex-col dark:h-screen'>
+    <div className='flex items-center flex-col dark:h-screen dark:mb-[50px]'>
     <img src={artist?.header_image_url ? artist?.header_image_url : NOT_FOUND } className='title_image_page my-5' alt="" />
     <div className="my_flex">
 <Link to={`https://www.instagram.com/${artist?.instagram_name}`}><AiFillInstagram className="hover_div_artist" size={'47px'}/></Link>

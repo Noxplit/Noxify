@@ -8,7 +8,7 @@ export const songSlice = createSlice({
     pagination:1,
     loading:true,
     input:'eminem',
-    theme:false
+    theme:true
 	},
 	reducers: {
 		getPeriod: (state, { payload }) => {
