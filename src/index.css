@@ -10,7 +10,7 @@ body {
 
 
 body {
-  @apply  text-black 
+  @apply text-black
 }
 
 .navigation_li {
@@ -19,45 +19,58 @@ body {
 
 @layer base {
   .animation_item {
-    @apply hover:bg-gray-100 dark:hover:bg-gray-500 p-2   cursor-pointer hover:scale-105 transition-all
+    @apply hover:bg-gray-100 dark:hover:bg-gray-500 p-2 cursor-pointer hover:scale-105 transition-all
   }
+
   .top_songs_item {
-    @apply flex justify-start items-center gap-2 hover:bg-gray-100 dark:hover:bg-gray-500 w-[300px] cursor-pointer px-2 
+    @apply flex justify-start items-center gap-2 hover:bg-gray-100 dark:hover:bg-gray-500 w-[300px] cursor-pointer px-2
   }
+
   .albums_image {
     @apply w-[180px] h-[180px] rounded-md object-cover
   }
+
   .title_image_page {
-    @apply w-[200px] h-[200px] object-cover rounded-full border-2 border-red-400 
+    @apply w-[200px] h-[200px] object-cover rounded-full border-2 border-red-400
   }
+
   .my_flex {
     @apply flex justify-center items-center gap-2
   }
+
   .artist_title_page {
-    @apply text-2xl font-bold mt-5 
+    @apply text-2xl font-bold mt-5
   }
+
   .song_title_page {
-    @apply  text-gray-400 md:px-[300px] px-[50px] py-2  text-center 
+    @apply text-gray-400 md:px-[300px] px-[50px] py-2 text-center
   }
+
   .artist_image_page {
-    @apply  w-[50px] h-[50px] object-cover rounded-full border-2 border-red-400
+    @apply w-[50px] h-[50px] object-cover rounded-full border-2 border-red-400
   }
+
   .hover_div_artist {
-    @apply  flex justify-start items-center gap-2 cursor-pointer hover:scale-105 transition-all hover:text-red-400
+    @apply flex justify-start items-center gap-2 cursor-pointer hover:scale-105 transition-all hover:text-red-400
   }
+
   .description_preview {
     @apply md:px-[300px] px-[50px] py-5 text-xs
   }
+
   .my_button {
-    @apply dark:hover:text-black border-2 border-gray-100 w-[100px] p-2 rounded-md cursor-pointer w-full hover:bg-gray-100 
+    @apply dark:hover:text-black border-2 border-gray-100 w-[100px] p-2 rounded-md cursor-pointer w-full hover:bg-gray-100
   }
+
   .input_login {
     @apply border-2 border-gray-300 p-2 rounded-md w-full dark:text-black
   }
+
   .button_enabled {
     @apply border-2 border-gray-300 p-2 rounded-md bg-white w-full
   }
+
   .button_disabled {
     @apply text-white p-2 rounded-md bg-black/50 w-full
   }
- }
+}

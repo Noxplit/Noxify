@@ -17,8 +17,8 @@ const Home = () => {
 	const chartAlbums = data?.chart_items
 
 	return (
-		<div className='  p-5'>
-			<h4 className='text-4xl font-bold mb-5'>Browse</h4>
+		<div>
+			<h4 className='text-4xl font-bold my-5'>Browse</h4>
 
 			<hr className='my-5' />
 			<Chart rows={'4'}>

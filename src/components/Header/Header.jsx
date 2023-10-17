@@ -21,7 +21,7 @@ const handleUser = () => {
   localStorage.removeItem('auth')
 }
 	return (
-		<div className='h-[60px] p-5 flex justify-between items-center border-b-2 border-gray-100'>
+		<div className='h-[60px] flex justify-between items-center border-b-2 border-gray-100'>
 			<Link to='/'>
 				<div className='flex justify-start gap-2 items-center hover:text-red-400 cursor-pointer'>
 					<GiMusicSpell size={'25'} />

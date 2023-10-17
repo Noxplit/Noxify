@@ -11,10 +11,11 @@ import { useDispatch, useSelector } from 'react-redux'
 import Profile from './pages/components/Profile/Profile'
 import { setCurrentUser, setIsAuth } from './redux/songSlice/authSlice'
 import { useEffect } from 'react'
+import Footer from './components/Footer/Footer'
 
 function App() {
 	const { isAuth } = useSelector(state => state.authSlice)
-  console.log(isAuth);
+	console.log(isAuth)
 	const { theme } = useSelector(state => state.songSlice)
 	const dispatch = useDispatch()
 
@@ -34,7 +35,7 @@ function App() {
 	return (
 		<div className={!theme ? '' : 'dark'}>
 			{isAuth ? (
-				<div className='dark:text-white dark:bg-gradient-to-tr from-slate-800 via-gray-800 to-neutral-600 dark:h-[100%]'>
+				<div className='dark:text-white dark:bg-gradient-to-tr from-slate-800 via-gray-800 to-neutral-600 dark:h-[100%] p-4'>
 					<Header />
 					<Routes>
 						<Route path='/song/:id' element={<SongPage />} />
@@ -45,6 +46,7 @@ function App() {
 						<Route path='/' element={<Home />} />
 						<Route path='*' element={<Home />} />
 					</Routes>
+					<Footer />
 				</div>
 			) : (
 				<Routes>
