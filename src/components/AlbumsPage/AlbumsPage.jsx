@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 
-const AlbumsPage = ({ chartAlbums }) => {
+const AlbumsPage = ({chartAlbums}) => {
 	return (
 		<>
 			{chartAlbums?.map(chart => (

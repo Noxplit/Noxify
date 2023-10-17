@@ -14,6 +14,7 @@ import { useEffect } from 'react'
 
 function App() {
 	const { isAuth } = useSelector(state => state.authSlice)
+  console.log(isAuth);
 	const { theme } = useSelector(state => state.songSlice)
 	const dispatch = useDispatch()
 
@@ -33,7 +34,7 @@ function App() {
 	return (
 		<div className={!theme ? '' : 'dark'}>
 			{isAuth ? (
-				<div className='dark:text-white dark:bg-gradient-to-tr from-slate-800 via-gray-800 to-neutral-600 dark:h-100%'>
+				<div className='dark:text-white dark:bg-gradient-to-tr from-slate-800 via-gray-800 to-neutral-600 dark:h-[100%]'>
 					<Header />
 					<Routes>
 						<Route path='/song/:id' element={<SongPage />} />

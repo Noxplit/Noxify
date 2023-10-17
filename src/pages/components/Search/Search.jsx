@@ -30,7 +30,7 @@ const Search = () => {
     e.preventDefault()
     dispatch(getInput(value))
   }
-
+console.log(data);
  
 	return (
 		<div>

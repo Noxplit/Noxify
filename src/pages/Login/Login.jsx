@@ -94,6 +94,9 @@ const Login = () => {
 				<Link to='/create_account'>
 					<p className='text-gray-100 underline hover_div_artist'>Create new account</p>
 				</Link>
+				<Link  to='/'>
+					<p onClick={() => dispatch(setIsAuth(true))} className='text-gray-100 bg-red-400 p-2 rounded-lg hover:text-white  hover_div_artist'>Continue without registration</p>
+				</Link>
 			</div>
 		</div>
 	)

@@ -11,7 +11,7 @@ const TopSongs = () => {
 	const params = { pagination, genre, period }
 	const { data, isFetching,isLoading } = useGetChartSongsQuery(params)
 	const chartSongs = data?.chart_items
-	useEffect(() => {dispatch(getLoading(isLoading))}, [pagination, genre, period,isLoading])
+	useEffect(() => {dispatch(getLoading(isLoading))}, [isLoading])
 
 	if (isFetching) {
 		return <Loading/>
